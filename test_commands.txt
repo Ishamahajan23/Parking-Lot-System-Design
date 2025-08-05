@@ -1,0 +1,14 @@
+create_parking_lot Masai 3 6
+park_vehicle CAR KA-01-DB-1234 black
+park_vehicle EV_CAR KA-02-EV-5678 white
+park_vehicle BIKE KA-03-BK-9012 red
+park_vehicle TRUCK KA-04-TR-3456 blue
+display free_count CAR
+display free_count EV_CAR
+display occupied_slots CAR
+display occupied_slots EV_CAR
+unpark_vehicle Masai_1_4
+unpark_vehicle Masai_1_5
+display free_count CAR
+display free_count EV_CAR
+exit

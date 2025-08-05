@@ -1,0 +1,6 @@
+create_parking_lot Masai 2 6
+park_vehicle CAR KA-01-DB-1234 black
+display free_count CAR
+unpark_vehicle PR1234_2_5
+display free_count BIKE
+exit

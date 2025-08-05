@@ -1,0 +1,12 @@
+create_parking_lot TestLot 2 6
+park_vehicle EV_CAR EV-01 white
+park_vehicle EV_CAR EV-02 black
+park_vehicle EV_CAR EV-03 red
+park_vehicle CAR CA-01 blue
+display free_count EV_CAR
+display free_count CAR
+display occupied_slots EV_CAR
+display occupied_slots CAR
+unpark_vehicle TestLot_1_4
+display free_count EV_CAR
+exit
