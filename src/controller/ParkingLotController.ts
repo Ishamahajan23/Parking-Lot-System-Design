@@ -28,7 +28,6 @@ export class ParkingLotController{
                 } else if (index <= 2) {
                     vehicleType = VehicleType.BIKE;
                 } else if (index === 3) {
-                    // Reserve one slot specifically for EV cars
                     vehicleType = VehicleType.EV_CAR;
                     isReservedForEV = true;
                 } else {
@@ -47,7 +46,6 @@ export class ParkingLotController{
         const vehicle = new Vehicle(vehicleType, regNo, color);
         const ticket = this.parkingLot.parkVehicle(vehicle);
         if (ticket) {
-            // this.tickets.push(ticket);
             return `Parked vehicle. Ticket ID: ${ticket.id}`;
         }
         return "Parking Lot Full";
@@ -58,9 +56,7 @@ export class ParkingLotController{
     }
 
     display(displayType: string, vType: string) {
-        // console.log(displayType, vType);
         const vehicleType = VehicleType[vType as keyof typeof VehicleType];
-        // console.log(vehicleType);
         let data;
         switch(displayType) {
             case 'free_slots':

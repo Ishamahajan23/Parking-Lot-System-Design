@@ -2,8 +2,6 @@ import Ticket from "../model/Ticket";
 import { ITicket, IVehicle } from "../types";
 
 class TicketController {
-    // Singleton Design Pattern
-
     private static instance: TicketController | null;
     
     static tickets = new Map<string, ITicket>();

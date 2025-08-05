@@ -29,9 +29,7 @@ export class ParkingLot{
     parkVehicle(vehicle:IVehicle){
         const slotToBook = this.parkingStrategy.park(this.floors, vehicle);
         if(slotToBook){
-            // occupy the slot
             slotToBook.occupy();
-            // generate ticket
             const ticket = TicketController.generateTicket(this.id, slotToBook.id, slotToBook.floorId, vehicle);
 
             return ticket;
@@ -47,10 +45,8 @@ export class ParkingLot{
         
         floors.forEach(floor => {
             const availableSlots = floor.getAvailableSlots(vehicleType);
-            // console.log({ availableSlots });
             freeSlots[floor.id] = showSlots ? availableSlots : availableSlots.length;
         });
-        // console.log({ freeSlots });
         return freeSlots;
     }
 
@@ -74,7 +70,6 @@ export class ParkingLot{
             const slot = floor.slots[Number(slotId)-1];
             slot.release();
             
-            // Set exit time and calculate charges
             (ticket as Ticket).setExitTime();
             const duration = (ticket as Ticket).getParkingDurationInHours();
             const totalFee = ParkingCharges.calculateFee(ticket.vehicle.type, duration);
@@ -86,8 +81,6 @@ export class ParkingLot{
 
         throw new Error("Invalid Ticket!!");
     }
-
-    //
 
 }
 

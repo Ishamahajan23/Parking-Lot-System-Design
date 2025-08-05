@@ -19,8 +19,8 @@ class Ticket implements ITicket{
     getParkingDurationInHours(): number {
         const exit = this.exitTime || new Date();
         const durationMs = exit.getTime() - this.entryTime.getTime();
-        const durationHours = Math.ceil(durationMs / (1000 * 60 * 60)); // Round up to next hour
-        return Math.max(1, durationHours); // Minimum 1 hour charge
+        const durationHours = Math.ceil(durationMs / (1000 * 60 * 60));
+        return Math.max(1, durationHours);
     }
 }
 

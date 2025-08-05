@@ -40,7 +40,6 @@ interface IParkingStrategy{
     park(floors:Array<IFloor>, vehicle:IVehicle):ISlot|null;
 }
 
-// Parking charges per hour for each vehicle type
 interface IParkingCharges {
     [VehicleType.CAR]: number;
     [VehicleType.EV_CAR]: number;
@@ -56,6 +55,3 @@ export {
     ITicket,
     IParkingStrategy,
     IParkingCharges};
-//**
-// Closest
-// Random Parking */
